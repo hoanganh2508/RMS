@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
   belongs_to :user
 
-  has_many :order_dishes
-  has_many :tables
+  has_many :order_dishes, dependent: :destroy
+  has_many :tables, dependent: :destroy
 end
