@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   devise_for :admins
   namespace :admin do
     root "dash_board#index"
+    resources :categories
+    resources :tables
   end
 end

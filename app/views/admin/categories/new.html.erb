@@ -1,0 +1,9 @@
+<div class="col-md-6 offset-3">
+  <%= form_for([:admin, @category]) do |f| %>
+
+    <%= f.label "Tên", class: 'text-color' %>
+    <%= f.text_field :name, class: 'form-control mt-2' %>
+
+    <%= f.submit "Tạo mới danh mục", class: "btn btn-primary mb-5 mt-3" %>
+  <% end %>
+</div>

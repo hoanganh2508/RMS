@@ -1,3 +1,4 @@
 class Table < ApplicationRecord
-  belongs_to :order
+  has_many :order_tables
+  validates :name, presence: true, length: { maximum: 30 }
 end
