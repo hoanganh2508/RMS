@@ -1,0 +1,25 @@
+<h1 class="text-color">Danh sách bàn</h1>
+<%= will_paginate %>
+  <div>
+    <p><%= link_to "Tạo mới", new_admin_table_path, class: 'text-color'%></p>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Tên</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tables.each_with_index do |table, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= link_to table.name, edit_admin_table_path(table),class: 'text-color' %></td>
+          <td><%= link_to "Xoá", [:admin, table], method: :delete, class: 'text-color',
+                                          data: { confirm: "Bạn có muốn xoá không?" } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<%= will_paginate %>
