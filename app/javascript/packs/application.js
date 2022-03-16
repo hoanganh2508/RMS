@@ -13,7 +13,7 @@ import GLightbox from 'glightbox';
 import Swiper from 'swiper';
 import AOS from 'aos';
 import "./main"
-
+import "@fortawesome/fontawesome-free/css/all"
 
 const images = require.context('../images', true)
 

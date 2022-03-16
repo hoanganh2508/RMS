@@ -15,4 +15,5 @@ Rails.application.routes.draw do
     resources :tables
     resources :dishes
   end
+  resources :tables
 end
