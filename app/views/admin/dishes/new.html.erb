@@ -1,0 +1,20 @@
+<div class="col-md-6 offset-3">
+  <%= form_for([:admin, @dish]) do |f| %>
+
+    <%= f.label "Tên", class: 'text-color' %>
+    <%= f.text_field :name, class: 'form-control mt-2' %>
+
+    <%= f.label "Giá" %>
+    <%= f.number_field :price, class: 'form-control' %>
+
+    <%= f.label "Nội dung" %>
+    <%= f.text_area :content , class: 'form-control' %>
+    <hr>
+    <%= f.submit "Tạo mới", class: "btn btn-primary" %>
+    <span class="image">
+      <%= f.file_field :image %>
+    </span>
+    <%= f.label :category_id %>
+    <%= f.select :category_id, Category.pluck(:name, :id) , class: 'form-control'%>
+  <% end %>
+</div>

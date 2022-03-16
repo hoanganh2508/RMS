@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     root "dash_board#index"
     resources :categories
     resources :tables
+    resources :dishes
   end
 end
