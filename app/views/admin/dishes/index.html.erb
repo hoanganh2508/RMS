@@ -1,0 +1,31 @@
+<h1 class="text-color">Tất cả món ăn</h1>
+<%= will_paginate class:"digg_pagination"%>
+  <div>
+    <p><%= link_to "Tạo mới", new_admin_dish_path, class: 'text-color'%></p>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>STT</th>
+        <th>Tên</th>
+        <th>Ảnh</th>
+        <th>Giá</th>
+        <th>Nội dung</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @dishes.each_with_index do |dish,index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= link_to dish.name, edit_admin_dish_path(dish) %></td>
+          <td><%= image_tag dish.display_image if dish.image.attached? %></td>
+          <td><%= number_with_delimiter(dish.price, :delimiter => ',')%>vnđ</td>
+          <td><%= dish.content %></td>
+          <td><%= link_to "Xoá", [:admin, dish], method: :delete,
+                                          data: { confirm: "Bạn có muốn xoá không?" } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<%= will_paginate class:"digg_pagination" %>
