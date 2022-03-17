@@ -1555,11 +1555,13 @@ section {
   padding: 0.4em 0.6em;
   width: 22em;
   margin-bottom: 0.3em;
-  text-align: center; }
+  text-align: center;
+}
 .digg_pagination .page_info b {
     color: #000033;
     background: #6aa6ed;
-    padding: 0.1em 0.25em; }
+    padding: 0.1em 0.25em;
+}
 .digg_pagination:after {
   content: ".";
   display: block;
@@ -1573,6 +1575,7 @@ section {
 }
 .margin_right{
   margin-right: 10px;
+}
 .booking-table {
   padding-top: 200px;
   width: 60%;
@@ -1580,4 +1583,15 @@ section {
 }
 .color-text {
   color: #cda45e;
+}
+.ha-menu {
+  .active {
+    background-color: transparent !important;
+    color: #cda45e !important;
+  }
+}
+.ha-menu {
+  .nav-link {
+    color: #fff;
+  }
 }

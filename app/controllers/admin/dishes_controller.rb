@@ -26,7 +26,7 @@ class Admin::DishesController < Admin::AdminsController
   def update
     if @dish.update(dish_params)
       flash[:success] = "Cập nhật thành công"
-      redirect_to admin_tours_path
+      redirect_to admin_dishes_path
     else
       render 'edit'
     end

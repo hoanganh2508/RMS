@@ -1,0 +1,39 @@
+<section id="menu" class="menu section-bg" style="margin-top: 110px;">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Thực đơn</h2>
+      <p>Thực đơn của nhà hàng chúng tôi</p>
+    </div>
+    <ul class="nav nav-pills ha-menu mb-3" id="pills-tab" role="tablist" style="justify-content: center;">
+      <% @categories.each_with_index do |category, i| %>
+        <% class_name = i == 0 ? "nav-link active" : "nav-link" %>
+        <li class="nav-item" role="presentation">
+          <button class="<%= class_name %>" data-bs-toggle="pill" data-bs-target="#pills-<%= category.id %>" type="button" role="tab"><%= category.name %></button>
+        </li>
+      <% end %>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <% @categories.each_with_index do |category, j| %>
+        <% class_name_div = j == 0 ? "tab-pane fade show active" : "tab-pane fade" %>
+        <div class="<%= class_name_div %>" id="pills-<%= category.id %>" role="tabpanel" aria-labelledby="pills-home-tab">
+          <div class="container">
+            <div class="row menu-container">
+              <% category.dishes.each do |dish| %>
+                <div class="col-lg-6 menu-item">
+                  <% image_path = dish.image.attached? ? dish.display_image : "default_dish_image.png" %>
+                  <%= image_tag image_path , class:"menu-img" %>
+                  <div class="menu-content">
+                    <%= link_to dish.name, "#" %><span><%= dish.price %> VNĐ</span>
+                  </div>
+                  <div class="menu-ingredients">
+                    <%= dish.content %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section><!-- End Menu Section -->
