@@ -4,15 +4,17 @@
   </div>
   <div class="container">
     <div class="row">
+    <% @tables.each do |table| %>
       <div id="icon-fork-knife-solid" class="wrap-icon with-top-tag col-2 mt-4">
         <button class="icon subtle" style="height: 100px; width: 100%; color: #fff; background: forestgreen;" data-bs-toggle="modal" data-bs-target="#exampleModal">
           <div>
             <i class="fa-solid fa-utensils" style="font-size: 30px;
             color: white;"></i>
           </div>
-          <span class="icon-name">Bàn 1</span>
+          <span class="icon-name"><%= table.name %></span>
         </button>
       </div>
+    <% end %>
     </div>
   </div>
 </div>
@@ -20,7 +22,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title color-text" id="exampleModalLabel">New message</h5>
+        <h5 class="modal-title color-text" id="exampleModalLabel">Điền thông tin đặt bàn</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -35,7 +37,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
         <button type="button" class="btn btn-primary">Send message</button>
       </div>
     </div>
